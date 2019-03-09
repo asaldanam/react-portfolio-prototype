@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.scss';
 import Topbar from './ui-modules/Topbar';
-
 import { connect } from 'react-redux';
 
 const mapState = state => ({ 
@@ -11,21 +10,15 @@ const mapState = state => ({
 
 class App extends Component {
 
-  // lockScrollStyles() {
-  //   return this.props.menuOpen 
-  //     ? { position: 'static', top: -this.props.scrollPosition }
-  //     : { position: 'static' }
-  // } 
-
   render() {
     return (
       <div className={'App'}>
-        <Topbar topBarType={'innerpage'}/>
-        { Array(100)
-          .fill('test scroll')
-          .map((item, index) => 
-            <div key={index} style={{paddingLeft: '16px', backgroundColor: index === 30 ? 'red': 'white'}}>{item}</div>
-        )}
+          <Topbar topBarType={'innerpage'}/>
+          { Array(100)
+            .fill('test scroll')
+            .map((item, index) => 
+              <div key={index} style={{paddingLeft: '16px', backgroundColor: index === 30 ? 'red': 'white'}}>{item}</div>
+          )}
       </div>
     );
   }
