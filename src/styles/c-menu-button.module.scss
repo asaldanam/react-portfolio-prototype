@@ -1,0 +1,29 @@
+@import 'settings.module';
+
+.container {
+  height: 32px;
+  width: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  height: 16px;
+  width: 24px;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  
+  & > li {
+    background-color: $color-sec;
+    width: 24px;
+    height: 2px;
+    position: absolute;
+    transition-property: transform, opacity;
+    will-change: transform, opacity;
+    transition-duration: 0.5s;
+    transition-timing-function: $easing-main;
+  }
+}

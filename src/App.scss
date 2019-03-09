@@ -1,0 +1,57 @@
+@import './styles/settings.module';
+@import './styles/antd';
+
+@font-face {
+  font-family: 'ING';
+  font-style: normal;
+  font-weight: 400;
+  src: url(./assets/fonts/INGMeWeb-Regular.woff) format('woff'),
+       url(./assets/fonts/INGMeWeb-Regular.ttf) format('truetype');  
+}
+
+@font-face {
+  font-family: 'ING';
+  font-style: bold;
+  font-weight: 600;
+  src: url(./assets/fonts/INGMeWeb-Bold.woff) format('woff'),
+       url(./assets/fonts/INGMeWeb-Bold.ttf) format('truetype');  
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-overflow-scrolling: none;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(9, 28, 90, 0.08);
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+.infinite-scroll-component  {
+  // -webkit-overflow-scrolling: touch;
+  background-color: red;
+}
+
+.modal-open {
+  overflow: hidden;
+}
+
+.App {
+  width: 100%;
+  // font-size: 14px;
+  // color: $color-grey_dark;
+}

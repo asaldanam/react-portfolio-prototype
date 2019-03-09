@@ -1,0 +1,29 @@
+.ant-dropdown-menu {
+  border-radius: $borderRadius-main;
+  box-shadow: $boxShadow-active;
+  padding: 0px;
+}
+
+.ant-dropdown-menu-item {
+  padding: 0.65rem 1.15rem;
+  font-weight: 400;
+
+  &:hover{
+    background-color: $color-grey_lighter;
+  }
+
+  &:first-of-type {
+    border-radius: $borderRadius-main $borderRadius-main 0 0;
+  }
+
+  &-selected {
+    color: $color-sec;
+    background-color: $color-grey_lighter;
+  }
+
+}
+
+.ant-dropdown-menu-item-divider {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
