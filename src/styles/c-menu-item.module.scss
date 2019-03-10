@@ -1,0 +1,15 @@
+@import '_settings.module.scss';
+
+.container {
+  height: 72px;
+  border-bottom: 1px $border-main;
+}
+
+.icon {
+
+}
+
+.text {
+  font-family: $fontfamily-main;
+  font-size: 1.25rem;
+}

@@ -1,0 +1,44 @@
+@import '_settings.module.scss';
+
+.userProfile {
+  width: 100%;
+}
+
+.avatar {
+  min-height: 64px;
+  min-width: 64px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &_fallback {
+    font-family: $fontfamily-main;
+    font-weight: 600;
+    color: white;
+    background-color: $color-main;
+    font-size: 2rem;
+  }
+}
+
+.avatarImg {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.user {
+  @include text-ellipsis();
+  font-family: $fontfamily-main;
+  color: $color-sec;
+  font-size: 1.5rem;
+}
+
+.userAltTxt {
+  @include text-ellipsis();
+  font-family: $fontfamily-main;
+  position: relative;
+  top: -4px;
+  font-size: 1rem;
+  color: $color-font_grey;
+}

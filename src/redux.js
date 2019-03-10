@@ -3,13 +3,16 @@
  */
 const initialState = {
   menuOpen: false,
-  scrollPosition: 0,
   user: {
-    selectedAccount: 'all',
-    accounts: [
-      'ES7921000813610123456789',
-      'ES9832030534462438007171'
-    ]
+    userName: 'Abel',
+    userSurname: 'Saldaña Martínez',
+    userAccountType: 'Cuenta Nómina',
+    // userAvatar: 'https://media.licdn.com/dms/image/C5603AQGFMmgZIcpn6A/profile-displayphoto-shrink_200_200/0?e=1557964800&v=beta&t=LIkHozPYZgQ7sXoz5BpPrLkBJMi220PG4ipKRS6O_n0'
+    // selectedAccount: 'all',
+    // accounts: [
+    //   'ES7921000813610123456789',
+    //   'ES9832030534462438007171'
+    // ]
   }
 };
 
@@ -18,19 +21,18 @@ const initialState = {
  */
 const ACTION = {
   MENU_STATE_CHANGE: 'MENU_STATE_CHANGE',
-  USER_ACCOUNT_SELECT: 'USER_ACCOUNT_SELECT'
+  SET_USER_DATA: 'SET_USER_DATA'
 }
 
 /*
  * action creators
  */
-
-export const menuStateChange = menuState => ({
-  type: ACTION.MENU_STATE_CHANGE, payload: menuState
+export const menuStateChange = menuOpen => ({
+  type: ACTION.MENU_STATE_CHANGE, payload: menuOpen
 })
 
-export const userAccountSelect = account => ({
-  type: ACTION.USER_ACCOUNT_SELECT, payload: account
+export const setUserData = userData => ({
+  type: ACTION.SET_USER_DATA, payload: userData
 })
 
 /*
@@ -41,15 +43,18 @@ const rootReducer = (prevState = initialState, action) => {
     case ACTION.MENU_STATE_CHANGE:
       return {
         ...prevState,
-        menuOpen: action.payload.menuOpen,
-        scrollPosition: action.payload.scrollPosition ? action.payload.scrollPosition : prevState.scrollPosition
+        menuOpen: action.payload
       }
-    case ACTION.USER_ACCOUNT_SELECT:
+    case ACTION.SET_USER_DATA:
       return {
         ...prevState,
+        menuOpen: action.payload,
         user: {
           ...prevState.user,
-          selectedAccount: action.payload
+          userName: action.payload.user,
+          userSurname: action.payload.surname,
+          userAccountType: action.payload.account,
+          userAvatar: action.payload.avatar,
         }
       }
     default:

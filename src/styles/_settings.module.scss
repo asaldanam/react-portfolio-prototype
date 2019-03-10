@@ -5,15 +5,38 @@ $color-grey_black: #333333;
 $color-grey_dark: #555555;
 $color-grey_light: #e6e6eb;
 $color-grey_lighter: #f5f5f5;
-$color-font_grey: #555555;
+$color-font_grey: #838398;
 $color-font_grey_light: #C9C9DE;
 
 //fonts
+$fontfamily-main: 'ING';
 $fontsize-main: 14px;
+
+//
 
 //other
 $boxShadow-main: 0px 3px 12px 0px rgba(9, 28, 90, 0.12);
 $boxShadow-topbar: 0px 5px 12px 0px rgba(9, 28, 90, 0.08);
 
+$border-main: solid $color-font_grey_light;
 $borderRadius-main: 3px;
+
+//animations
+@keyframes fade-in {
+  from { transform: translateX(0.75rem); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; } 
+}
+@keyframes fade-in-opacity {
+  from { opacity: 0; }
+  to { opacity: 1; } 
+}
+
 $easing-main: cubic-bezier(0.4, 0.1, 0.1, 0.9);
+$anim-fadein-main: fade-in 0.5s $easing-main forwards;
+
+//mixins
+@mixin text-ellipsis() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

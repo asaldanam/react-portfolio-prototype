@@ -1,4 +1,4 @@
-@import 'settings.module';
+@import '_settings.module.scss';
 
 @keyframes fade-in {
   from {
@@ -36,6 +36,7 @@
 
 .logo {
   position: absolute;
+  z-index: 4;
   top: 1px;
   transition: all 0.35s $easing-main;
   will-change: transform, left;
@@ -66,7 +67,7 @@
 .iconRight {
   @extend .icon ;
   position: absolute;
-  z-index: 3;
+  z-index: 4;
   right: 0;
   top: 0;
 }

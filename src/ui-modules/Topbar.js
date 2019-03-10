@@ -1,18 +1,25 @@
 import React, { PureComponent } from 'react';
+import { MenuButton, IconButton, MenuContainer, UserProfile, MenuItem, Box, Container } from '../lib-components';
 import css from '../styles/c-topbar.module.scss';
 import { connect } from 'react-redux';
 import { menuStateChange } from '../redux';
+
 import ic24SecBack from '../assets/icons/ic-24-sec-back.svg';
 import logo from '../assets/images/logo.svg';
-import { MenuButton, IconButton, MenuContainer } from '../lib-components';
+import ic40MainAssist from '../assets/icons/ic-40-main-assist.svg';
+import ic40MainLocation from '../assets/icons/ic-40-main-location.svg';
+import ic40MainPig from '../assets/icons/ic-40-main-pig.svg';
 
 const mapState = state => ({ 
   menuOpen: state.menuOpen,
-  scrollPosition: state.scrollPosition
+  userName: state.user.userName,
+  userSurname: state.user.userSurname,
+  userAccountType: state.user.userAccountType,
+  userAvatar: state.user.userAvatar
  });
 
 const mapDispatch = dispatch => ({
-  menuStateChange: menuState => dispatch( menuStateChange(menuState) ),
+  menuStateChange: menuOpen => dispatch( menuStateChange(menuOpen) ),
 });
 
 export class Topbar extends PureComponent {
@@ -91,7 +98,7 @@ export class Topbar extends PureComponent {
   }
 
   render() {
-    console.log(this.state)
+    console.log('Topbar', this.state)
     return (
     <div className={css.wrapper}>
       <div className={this.getTopbarCss()}>
@@ -102,12 +109,36 @@ export class Topbar extends PureComponent {
             <img className={this.getIconCss().logo} src={logo} alt=""/>
             <div 
               className={`${this.getIconCss().menuIcon} ${css.iconRight}`}
-              onClick={() => this.props.menuStateChange({menuOpen: !this.props.menuOpen})}
+              onClick={() => this.props.menuStateChange(!this.props.menuOpen)}
             >
               <MenuButton isOpen={this.props.menuOpen}/>
             </div>
             <MenuContainer isOpen={this.props.menuOpen}>
-              {Array(100).fill('cosa').map((item, index) => <div key={index}>{item}</div>)}
+              <Container animType={'in-out'} animDelay={300}>
+                <UserProfile
+                  avatarSrc={this.props.userAvatar} 
+                  nameTxt={this.props.userName}
+                  surnameTxt={this.props.userSurname}
+                  userAltTxt={this.props.userAccountType}
+                />
+              </Container>
+              <Box pt={'2rem'}>
+                <div onClick={() => {console.log('test')}}>
+                  <Container animType={'in-out'} animDelay={300}>
+                    <MenuItem iconSrc={ic40MainLocation} itemTxt={'Cajeros cerca'} />
+                  </Container>
+                </div>
+                <div onClick={() => {console.log('test')}}>
+                  <Container animType={'in-out'} animDelay={400}>
+                    <MenuItem iconSrc={ic40MainAssist} itemTxt={'Asistencia 24 horas'}/>
+                  </Container>
+                </div>
+                <div onClick={() => {console.log('test')}}>
+                  <Container animType={'in-out'} animDelay={500}>
+                    <MenuItem iconSrc={ic40MainPig} itemTxt={'Producto'}/>
+                  </Container>
+                </div>
+              </Box>
             </MenuContainer>
           </div>
         </div>

@@ -1,0 +1,23 @@
+@import '_settings.module.scss';
+
+.container {
+
+  div {
+    position: static;
+  }
+
+  line {
+    stroke: transparent;
+  }
+
+  line:nth-child(3n - 2) {
+    stroke: $color-grey_light;
+    stroke-dasharray: 3;
+  }
+
+  text {
+    font-family: $fontfamily-main;
+    font-weight: 600;
+    fill: $color-font_grey !important;
+  }
+}

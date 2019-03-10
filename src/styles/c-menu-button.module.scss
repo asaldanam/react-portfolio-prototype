@@ -1,4 +1,4 @@
-@import 'settings.module';
+@import '_settings.module.scss';
 
 .container {
   height: 32px;
@@ -25,5 +25,6 @@
     will-change: transform, opacity;
     transition-duration: 0.5s;
     transition-timing-function: $easing-main;
+    backface-visibility: hidden;
   }
 }

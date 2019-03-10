@@ -55,3 +55,25 @@ ul {
   // font-size: 14px;
   // color: $color-grey_dark;
 }
+
+.AppWrapper {
+  &_hidden {
+    opacity: 0;
+  }
+  &_show {
+    opacity: 0;
+    animation: fade-in-opacity 0.2s linear 0.4s forwards;
+  }
+}
+
+.Container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.Animation {
+  &_fade-in {
+    opacity: 0;
+    animation: $anim-fadein-main;
+  }
+}
