@@ -21,18 +21,13 @@
   top: 0;
   width: 100%;
   transition: all 0.35s $easing-main;
-}
-
-.containerFixed {
-  @extend .container ;
-  // position: fixed;
-  box-shadow: $boxShadow-topbar;
-}
-
-.containerHidden {
-  @extend .containerFixed ;
-  transform: translatey(-56px);
-  box-shadow: none;
+  &._fixed {
+    box-shadow: $boxShadow-topbar;
+  }
+  &._hidden {
+    transform: translatey(-56px);
+    box-shadow: none;
+  }
 }
 
 .topbar {
