@@ -1,8 +1,7 @@
 import React from 'react';
-import css from '../styles/c-icon-button.module.scss';
+import css from '../ui-styles/c-icon-button.module.scss';
 
 const IconButton = (props) => {
-  console.log('IconButton', props)
   return (
     <button className={css.button} type="button" >
       <img src={props.src} onClick={props.onClick} alt={props.alt}/>

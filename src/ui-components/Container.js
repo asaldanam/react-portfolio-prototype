@@ -22,7 +22,7 @@ const Container = memo(function Container(props) {
 
 })
 
-Container.PropTypes = {
+Container.propTypes = {
   fullWidth: PropTypes.bool,
   animType: PropTypes.oneOf(['in-out']),
   animDelay: PropTypes.number

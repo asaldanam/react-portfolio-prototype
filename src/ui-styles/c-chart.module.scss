@@ -1,7 +1,8 @@
 @import '_settings.module.scss';
 
 .container {
-
+  pointer-events: none;
+  
   div {
     position: static;
   }
@@ -15,9 +16,17 @@
     stroke-dasharray: 3;
   }
 
+  rect {
+    opacity: 0;
+    animation: fade-in-opacity 0.5s linear forwards;
+  }
+
   text {
+    font-size: 10px !important;
     font-family: $fontfamily-main;
     font-weight: 600;
     fill: $color-font_grey !important;
+    opacity: 0;
+    animation: fade-in-opacity 0.5s linear forwards;
   }
 }

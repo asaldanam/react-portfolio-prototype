@@ -1,6 +1,6 @@
 import React, { memo } from 'react'
 import PropTypes from 'prop-types'
-import css from '../styles/c-menu-item.module.scss';
+import css from '../ui-styles/c-menu-item.module.scss';
 import { Flex, Box } from '../lib-components';
 
 const MenuItem = memo(function MenuItem(props) {
@@ -17,7 +17,7 @@ const MenuItem = memo(function MenuItem(props) {
   )
 })
 
-MenuItem.PropTypes = {
+MenuItem.propTypes = {
   iconSrc: PropTypes.string,
   itemTxt: PropTypes.string
 }

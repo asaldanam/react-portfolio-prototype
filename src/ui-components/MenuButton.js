@@ -1,8 +1,7 @@
 import React from 'react'
-import css from '../styles/c-menu-button.module.scss';
+import css from '../ui-styles/c-menu-button.module.scss';
 
 const MenuButton = (props) => {
-  console.log('MenuButton', props);
   const line = {
     top: props.isOpen
       ? {transform: 'scaleX(1) rotate(45deg) translate(5px, 5px)'}

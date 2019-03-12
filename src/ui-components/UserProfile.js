@@ -1,6 +1,6 @@
 import React, { memo } from 'react'
 import PropTypes from 'prop-types'
-import css from '../styles/c-user-profile.module.scss';
+import css from '../ui-styles/c-user-profile.module.scss';
 import { Flex, Box } from '../lib-components';
 
 const UserProfile = memo(function UserProfile(props) {
@@ -10,7 +10,6 @@ const UserProfile = memo(function UserProfile(props) {
   const cx = {
     avatar: `${css.avatar} ${props.avatarSrc ? '' : css.avatar_fallback}`
   }
-  console.log(props)
   return (
     <Flex align={'center'} className={css.userProfile}>
       <Box mr={'1rem'} className={cx.avatar}>
@@ -31,7 +30,7 @@ const UserProfile = memo(function UserProfile(props) {
   )
 })
 
-UserProfile.PropTypes = {
+UserProfile.propTypes = {
   nameTxt: PropTypes.string,
   surnameTxt: PropTypes.string,
   avatarSrc: PropTypes.string,

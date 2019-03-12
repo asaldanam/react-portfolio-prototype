@@ -1,5 +1,5 @@
-import React from 'react';
-import css from '../styles/c-menu-container.module.scss';
+import React, { Fragment } from 'react';
+import css from '../ui-styles/c-menu-container.module.scss';
 import ScrollLock from 'react-scrolllock';
 
 const MenuContainer = ({isOpen, children}) => {
@@ -17,12 +17,14 @@ const MenuContainer = ({isOpen, children}) => {
       <div className={cx.overlay}></div>
       <div className={css.backdrop} style={{transform: `scale(${getBackdropWidth})`}}></div>
       {isOpen ?
-        <div className={css.container}>
-          <div>
-            <ScrollLock/>
-            {children}
+        <Fragment>
+          <div className={css.container}>
+            <div>
+              <ScrollLock/>
+              {children}
+            </div>
           </div>
-        </div>
+        </Fragment>
       : null}
     </div>
   )

@@ -6,6 +6,7 @@ import UserProfile from "./ui-components/UserProfile";
 import Container from "./ui-components/Container";
 import MenuItem from './ui-components/MenuItem';
 import Chart from './ui-components/Chart';
+import DataHeader from './ui-components/DataHeader';
 export {
   Flex,
   Box,
@@ -16,5 +17,6 @@ export {
   Container,
   MenuItem,
   Chart,
+  DataHeader
 }
 

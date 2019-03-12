@@ -1,16 +1,16 @@
 import React, { PureComponent } from 'react';
 import { MenuButton, IconButton, MenuContainer, UserProfile, MenuItem, Box, Container } from '../lib-components';
-import css from '../styles/c-topbar.module.scss';
+import css from '../ui-styles/c-topbar.module.scss';
 import { connect } from 'react-redux';
 import { menuStateChange } from '../redux';
 
-import ic24SecBack from '../assets/icons/ic-24-sec-back.svg';
-import logo from '../assets/images/logo.svg';
-import ic40MainAssist from '../assets/icons/ic-40-main-assist.svg';
-import ic40MainLocation from '../assets/icons/ic-40-main-location.svg';
-import ic40MainPig from '../assets/icons/ic-40-main-pig.svg';
+import ic24SecBack from '../ui-assets/icons/ic-24-sec-back.svg';
+import logo from '../ui-assets/images/logo.svg';
+import ic40MainAssist from '../ui-assets/icons/ic-40-main-assist.svg';
+import ic40MainLocation from '../ui-assets/icons/ic-40-main-location.svg';
+import ic40MainPig from '../ui-assets/icons/ic-40-main-pig.svg';
 
-const mapState = state => ({ 
+const mapStateToProps = state => ({ 
   menuOpen: state.menuOpen,
   userName: state.user.userName,
   userSurname: state.user.userSurname,
@@ -18,11 +18,11 @@ const mapState = state => ({
   userAvatar: state.user.userAvatar
  });
 
-const mapDispatch = dispatch => ({
+const mapDispatchToProps = dispatch => ({
   menuStateChange: menuOpen => dispatch( menuStateChange(menuOpen) ),
 });
 
-export class Topbar extends PureComponent {
+export class MTopbar extends PureComponent {
 
   constructor(props) {
     super(props);
@@ -98,12 +98,12 @@ export class Topbar extends PureComponent {
   }
 
   render() {
-    console.log('Topbar', this.state)
+
     return (
     <div className={css.wrapper}>
       <div className={this.getTopbarCss()}>
           <div className={css.topbar}>
-            <div className={this.getIconCss().backIcon}>
+            <div className={this.getIconCss().backIcon} onClick={this.props.onClickBack.bind(this)}>
               <IconButton src={ic24SecBack}/>
             </div>
             <img className={this.getIconCss().logo} src={logo} alt=""/>
@@ -147,4 +147,4 @@ export class Topbar extends PureComponent {
   }
 }
 
-export default connect(mapState, mapDispatch)(Topbar);
+export default connect(mapStateToProps, mapDispatchToProps)(MTopbar);
