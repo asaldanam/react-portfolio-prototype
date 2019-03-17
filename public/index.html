@@ -1,19 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="theme-color" content="#FFFFFF" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+      <meta charset="utf-8" />
+      <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      />
+      <meta name="apple-mobile-web-app-title" content="ING Prototype">
+      <meta name="theme-color" content="#FFFFFF" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+      <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+      <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- 
+      IMAGES
+     -->
+      <link href="https://firebasestorage.googleapis.com/v0/b/react-portfolio-prototype.appspot.com/o/iphone5_splash.png?alt=media&token=402e14a8-96b5-4c4a-922b-2a9b66a20294" 
+        media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" 
+      />
+      <link href="https://firebasestorage.googleapis.com/v0/b/react-portfolio-prototype.appspot.com/o/iphone6_splash.png?alt=media&token=8d1ad2aa-daa9-445d-a809-d80d6c000b70" 
+        media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" 
+      />
+      <link href="https://firebasestorage.googleapis.com/v0/b/react-portfolio-prototype.appspot.com/o/iphoneplus_splash.png?alt=media&token=560b0d7a-cb40-4f44-80ba-a0dafdb138c7" 
+        media="(device-width: 621px) and (device-height: 1104px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" 
+      />
+      <link href="https://firebasestorage.googleapis.com/v0/b/react-portfolio-prototype.appspot.com/o/iphonex_splash.png?alt=media&token=f5f60b05-cb32-43de-b6fa-d93a82e28f1e" 
+        media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" 
+      />
+      <link href="https://firebasestorage.googleapis.com/v0/b/react-portfolio-prototype.appspot.com/o/iphonexr_splash.png?alt=media&token=f3621910-7d3a-4875-8a6f-05aa26e914c3" 
+        media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" 
+      />
+      <link href="https://firebasestorage.googleapis.com/v0/b/react-portfolio-prototype.appspot.com/o/iphonexsmax_splash.png?alt=media&token=23822bf8-e080-4f83-a27c-b49d34897bbe" 
+        media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" 
+      />
+      <link href="https://firebasestorage.googleapis.com/v0/b/react-portfolio-prototype.appspot.com/o/ipad_splash.png?alt=media&token=1aefc965-2fe0-45f3-991f-988337f674e5" 
+        media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" 
+      />
+      <link href="https://firebasestorage.googleapis.com/v0/b/react-portfolio-prototype.appspot.com/o/ipad_splash.png?alt=media&token=1aefc965-2fe0-45f3-991f-988337f674e5" 
+        media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" 
+      />
+      <link href="https://firebasestorage.googleapis.com/v0/b/react-portfolio-prototype.appspot.com/o/ipadpro3_splash.png?alt=media&token=8e5fdb3b-0dc0-444e-a33f-d801c9682c08" 
+        media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" 
+      />
+      <link href="https://firebasestorage.googleapis.com/v0/b/react-portfolio-prototype.appspot.com/o/ipadpro2_splash.png?alt=media&token=cf113f2a-fef3-4d92-92f5-7572f14b45be" 
+        media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" 
+      />
+
+      <!-- ICONS-->
+      
+       <link rel="apple-touch-icon" 
+        href="">
+      <link rel="apple-touch-icon" sizes="128x128" 
+        href="https://firebasestorage.googleapis.com/v0/b/react-portfolio-prototype.appspot.com/o/icon-128x128.png?alt=media&token=17e80fb7-b1b0-43b6-98dc-aae5d092203d">
+      <link rel="apple-touch-icon" sizes="144x144" 
+        href="https://firebasestorage.googleapis.com/v0/b/react-portfolio-prototype.appspot.com/o/icon-144x144.png?alt=media&token=34cd7b06-edaf-40d0-8971-3ecbecd5266f">
+      <link rel="apple-touch-icon" sizes="152x152"
+         href="https://firebasestorage.googleapis.com/v0/b/react-portfolio-prototype.appspot.com/o/icon-152x152.png?alt=media&token=26b992ab-b916-46ca-bd02-8d9e1684d1d6">
+      <link rel="apple-touch-icon" sizes="192x192" 
+        href="https://firebasestorage.googleapis.com/v0/b/react-portfolio-prototype.appspot.com/o/icon-192x192.png?alt=media&token=86201678-e0fd-4aaa-9888-d8b1a68b7d18">
+      <link rel="apple-touch-icon" sizes="384x384" 
+        href="https://firebasestorage.googleapis.com/v0/b/react-portfolio-prototype.appspot.com/o/icon-384x384.png?alt=media&token=3b5566d7-edb0-4cb2-98a0-0f22ed67c52e">
+      <link rel="apple-touch-icon" sizes="512x512" 
+        href="https://firebasestorage.googleapis.com/v0/b/react-portfolio-prototype.appspot.com/o/icon-512x512.png?alt=media&token=4a66d097-9d61-4bfd-a47b-b13e265cb34e">
+      <link rel="apple-touch-icon" sizes="72x72" 
+        href="https://firebasestorage.googleapis.com/v0/b/react-portfolio-prototype.appspot.com/o/icon-72x72.png?alt=media&token=93411867-c858-4ab4-93b7-60d2078fab87">
+      <link rel="apple-touch-icon" sizes="96x96" 
+        href="https://firebasestorage.googleapis.com/v0/b/react-portfolio-prototype.appspot.com/o/icon-96x96.png?alt=media&token=99103f28-12b6-45cb-85ee-312ca3bdbd4b">
+     
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -23,7 +81,7 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>ING Prototype</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
