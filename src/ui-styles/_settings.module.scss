@@ -54,3 +54,15 @@ $anim-fadein-main: fade-in 0.5s $easing-main forwards;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+@mixin reset-button() {
+  color: inherit;
+  cursor: default;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  background-color: transparent;
+  outline: none;
+  white-space: pre;
+  border: none;
+}

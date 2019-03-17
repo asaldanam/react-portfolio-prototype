@@ -9,6 +9,7 @@ import logo from '../ui-assets/images/logo.svg';
 import ic40MainAssist from '../ui-assets/icons/ic-40-main-assist.svg';
 import ic40MainLocation from '../ui-assets/icons/ic-40-main-location.svg';
 import ic40MainPig from '../ui-assets/icons/ic-40-main-pig.svg';
+import ic40MainExit from '../ui-assets/icons/ic-40-main-exit.svg';
 
 const mapStateToProps = state => ({ 
   menuOpen: state.menuOpen,
@@ -123,19 +124,24 @@ export class MTopbar extends PureComponent {
                 />
               </Container>
               <Box pt={'2rem'}>
-                <div onClick={() => {console.log('test')}}>
+                <div onClick={() => this.props.navigateTo('/cash-machines')}>
                   <Container animType={'in-out'} animDelay={300}>
                     <MenuItem iconSrc={ic40MainLocation} itemTxt={'Cajeros cerca'} />
                   </Container>
                 </div>
-                <div onClick={() => {console.log('test')}}>
+                <div onClick={() => this.props.navigateTo('/assist')}>
                   <Container animType={'in-out'} animDelay={400}>
                     <MenuItem iconSrc={ic40MainAssist} itemTxt={'Asistencia 24 horas'}/>
                   </Container>
                 </div>
-                <div onClick={() => {console.log('test')}}>
+                <div onClick={() => this.props.navigateTo('/products')}>
                   <Container animType={'in-out'} animDelay={500}>
                     <MenuItem iconSrc={ic40MainPig} itemTxt={'Producto'}/>
+                  </Container>
+                </div>
+                <div onClick={() => this.props.navigateTo('/')}>
+                  <Container animType={'in-out'} animDelay={500}>
+                    <MenuItem iconSrc={ic40MainExit} itemTxt={'Cerrar sesión'}/>
                   </Container>
                 </div>
               </Box>
