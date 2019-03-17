@@ -28,20 +28,20 @@ export class PLogin extends PureComponent {
     console.log('PLogin', this.props)
     return (
       <div>
-        <Box px={2} pt={1} mb={3}>
+        <Box px={2} pt={2} mb={3}>
           <WelcomeHeader 
             titleTxt={`${this.props.login.welcomeTxt} ${this.props.userName}`}
             infoTxt={this.props.login.infoTxt}
             hasError={this.props.login.hasError}
           />
         </Box>
-        <Box px={2}>
+        <Box px={2} mb={3}>
           <MAuthInput
             onValidationOk={() => this.goTo('/dashboard')}
           />
         </Box>
         <Flex align={'center'} justify={'center'}>
-          <Box py={32}>
+          <Box>
             <Link to="/notfound">Tengo problemas para acceder »</Link>
           </Box>
         </Flex>

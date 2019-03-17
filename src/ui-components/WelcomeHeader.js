@@ -1,7 +1,7 @@
 import React, { memo } from 'react'
 import PropTypes from 'prop-types'
 import css from '../ui-styles/c-welcome-header.module.scss'
-import { Box, Flex } from '../lib-components';
+import { Box } from '../lib-components';
 
 const WelcomeHeader = memo(function WelcomeHeader(props) {
 
