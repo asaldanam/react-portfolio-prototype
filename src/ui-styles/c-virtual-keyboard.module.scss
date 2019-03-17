@@ -1,0 +1,22 @@
+@import '_settings.module.scss';
+
+.numberBox {
+  border-right: 1px solid $color-grey_light;
+  border-bottom: 1px solid $color-grey_light;
+  &:nth-child(5n) {
+    border-right-color: transparent;
+  }
+  &:nth-child(n+6) {
+    border-bottom-color: transparent
+  }
+}
+
+.numberButton {
+  @include reset-button;
+  width: 100%;
+  font-family: $fontfamily-main;
+  color: $color-main;
+  font-size: 24px;
+  text-align: center;
+  padding: 0.75rem 0;
+}

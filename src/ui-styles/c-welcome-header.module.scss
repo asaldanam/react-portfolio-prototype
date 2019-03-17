@@ -1,0 +1,40 @@
+@import '_settings.module.scss';
+
+@keyframes has-error {
+  0% {
+    transform: translateX(-1rem);
+    color: $color-font_grey;
+  }
+  33% {
+    transform: translateX(1rem)
+  }
+  66% {
+    transform: translateX(-1rem)
+  }
+  100% {
+    transform: translateX(0);
+    color: red;
+  }
+}
+
+.container {
+  max-width: 15rem;
+  margin: 0 auto,
+}
+
+.welcomeTitle {
+  font-family: $fontfamily-main;
+  color: $color-sec;
+  font-size: 24px;
+  text-align: center;
+}
+
+.aditionalInfo {
+  font-family: $fontfamily-main;
+  font-size: 14px;
+  color: $color-font_grey;
+  text-align: center;
+  &_error {
+    animation: has-error 1s $easing-main forwards;
+  }
+}

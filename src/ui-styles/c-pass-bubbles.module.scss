@@ -1,0 +1,37 @@
+@import '_settings.module.scss';
+
+.container {
+
+}
+
+.bubble {
+  background-color: $color-grey_light;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: relative;
+
+  &::before {
+    content: ' ';
+    width: 24px;
+    height: 24px;
+    top: 8px;
+    left: 8px;
+    border-radius: 50%;
+    background-color: $color-sec;
+    display: block;
+    position: absolute;
+    opacity: 0;
+    transform: scale(1.6);
+    transition: all 0.5s $easing-main;
+    will-change: transform, opacity;
+  }
+  
+  &_active {
+    &::before {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+}

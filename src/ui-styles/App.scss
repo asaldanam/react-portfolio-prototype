@@ -41,6 +41,11 @@ ul {
   list-style-type: none;
 }
 
+a {
+  font-family: $fontfamily-main;
+  color: $color-main;
+}
+
 .App {
   width: 100%;
   // font-size: 14px;

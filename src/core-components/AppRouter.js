@@ -5,38 +5,50 @@ import { PDashboard } from '../ui-pages/PDashboard';
 import { PNotFound } from '../ui-pages/PNotFound';
 import { connect } from 'react-redux'
 import MTopbar from '../ui-modules/MTopbar';
+import PLogin from '../ui-pages/PLogin';
+import { menuStateChange } from '../redux';
 
 const mapStateToProps = (state) => ({
   menuOpen: state.menuOpen
+});
+
+const mapDispatchToProps = dispatch => ({
+  menuStateChange: menuOpen => dispatch( menuStateChange(menuOpen) ),
 });
 
 export class RouterOutletComponent extends PureComponent {
 
   getTopbarType(pathname) {
     const mapPathsToTopbarTypes = {
-      '/': 'dashboard',
+      '/': 'login',
+      '/dashboard': 'dashboard'
     }
     return mapPathsToTopbarTypes[pathname] || 'innerpage';
   }
 
   goBack() {
-    console.log('test')
    this.props.history.goBack();
   }
   
+  navigateTo(path) {
+    this.props.history.push(path)
+    this.props.menuStateChange(false);
+  }
+  
   render() {
-    console.log(this.props.history);
     return (
       <div className={'App'}>
         <MTopbar 
           topBarType={this.props.menuOpen ? 'dashboard' : this.getTopbarType(this.props.history.location.pathname)}
           onClickBack={() => {this.goBack()}}
+          navigateTo={path => this.navigateTo(path)}
         />
         <div className={`AppWrapper ${this.props.menuOpen ? 'AppWrapper_hidden' : 'AppWrapper_show'}`}>
           <TransitionGroup className={`AppRouterAnim AppRouterAnim_${this.props.history.action.toLowerCase()}`}>
             <CSSTransition key={this.props.location.key} timeout={{ enter: 300, exit: 300 }} classNames={'fade'}>
               <Switch location={this.props.location}>
-                <Route path="/" exact component={PDashboard} />
+                <Route path="/" exact component={PLogin} />
+                <Route path="/dashboard" exact component={PDashboard} />
                 <Route component={PNotFound} />
               </Switch>
             </CSSTransition>
@@ -48,7 +60,7 @@ export class RouterOutletComponent extends PureComponent {
   }
 };
 
-const RouterOutlet = withRouter(connect(mapStateToProps)(RouterOutletComponent));
+const RouterOutlet = withRouter(connect(mapStateToProps, mapDispatchToProps)(RouterOutletComponent));
 
 const AppRouter = () => {
   return (

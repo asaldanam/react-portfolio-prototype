@@ -7,6 +7,9 @@ import Container from "./ui-components/Container";
 import MenuItem from './ui-components/MenuItem';
 import Chart from './ui-components/Chart';
 import DataHeader from './ui-components/DataHeader';
+import WelcomeHeader from './ui-components/WelcomeHeader';
+import PassBubbles from './ui-components/PassBubbles';
+import VirtualKeyboard from './ui-components/VirtualKeyboard';
 export {
   Flex,
   Box,
@@ -17,6 +20,8 @@ export {
   Container,
   MenuItem,
   Chart,
-  DataHeader
+  DataHeader,
+  WelcomeHeader,
+  PassBubbles,
+  VirtualKeyboard
 }
-
