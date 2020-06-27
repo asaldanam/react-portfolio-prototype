@@ -9,6 +9,7 @@
     "nivo": "^0.31.0",
     "node-sass": "^4.11.0",
     "react": "^16.8.4",
+    "react-app-polyfill": "^0.2.2",
     "react-dom": "^16.8.4",
     "react-is-scrolling": "^1.0.1",
     "react-redux": "^6.0.1",
